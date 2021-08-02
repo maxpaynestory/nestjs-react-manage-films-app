@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 import { MongooseModule } from '@nestjs/mongoose';
 
 export const FilmSchema = new Schema({
-  Name: String,
+  name: String,
   description: String,
   releaseDate: Date,
   rating: {
@@ -12,8 +12,9 @@ export const FilmSchema = new Schema({
   ticketPrice: Number,
   country: String,
   genres: [String],
-  photo: { data: Buffer, contentType: String },
+  photo: {type: String, required: false},
   createdAt: { type: Date, default: Date.now },
+  comments:[],
 });
 
 export const FilmModel = MongooseModule.forFeature([
