@@ -8,9 +8,11 @@ import { FilmModule } from './film/film.module';
 import { FilmModel } from './models/film.model';
 import { UserModule } from './user/user.module';
 import { UserService } from './services/user/user.service';
+import { UserModel } from './models/user.model';
 
 @Module({
   imports: [
+    UserModel,
     FilmModel,
     ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(
