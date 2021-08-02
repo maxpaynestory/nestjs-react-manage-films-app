@@ -15,6 +15,7 @@ export const FilmSchema = new Schema({
   photo: {type: String, required: false},
   createdAt: { type: Date, default: Date.now },
   comments:[],
+  slug: String,
 });
 
 export const FilmModel = MongooseModule.forFeature([

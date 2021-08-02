@@ -37,6 +37,7 @@ async function bootstrap() {
               'This is an average movie full of action and comedy, i like it',
           },
         ],
+        slug: "film-1",
       });
       films.push({
         name: 'Film 2',
@@ -53,6 +54,7 @@ async function bootstrap() {
               'It is a good movie for adults and cinematography is awesome',
           },
         ],
+        slug: "film-2",
       });
       films.push({
         name: 'Film 3',
@@ -69,6 +71,7 @@ async function bootstrap() {
               'Great movie for valentine',
           },
         ],
+        slug: "film-3",
       });
       filmService.seed(films);
       console.log('Database seeding completed, Ctrl+c to terminate this job');
