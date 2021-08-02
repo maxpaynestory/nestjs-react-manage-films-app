@@ -20,8 +20,8 @@ export class FilmController {
   }*/
 
   @Get()
-  findAll(@Query('limit') limit: number = 10, @Query('skip') skip: number = 0) {
-    return this.filmService.findAll(limit, skip);
+  findAll(@Query('limit') limit: Number = 10, @Query('skip') skip: Number = 0) {
+    return this.filmService.findAll(Number(limit), Number(skip));
   }
 
   @Get(':slug')
