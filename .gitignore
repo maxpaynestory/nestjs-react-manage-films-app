@@ -1,2 +1,8 @@
+# exclude everything
+mongodb-data/*
+
+# exception to the rule
+!mongodb-data/.gitkeep
+
 node_modules
 .vscode
