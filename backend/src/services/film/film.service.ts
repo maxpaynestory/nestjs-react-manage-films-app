@@ -16,5 +16,7 @@ export class FilmService {
       todos: docs,
     };
   }
-  async findOneBySlug(slug) {}
+  async findOneBySlug(slug) {
+      return await this.filmModel.findOne({slug: slug});
+  }
 }
