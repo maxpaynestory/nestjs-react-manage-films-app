@@ -17,6 +17,12 @@ export class FilmService {
     };
   }
   async findOneBySlug(slug) {
-      return await this.filmModel.findOne({slug: slug});
+    return await this.filmModel.findOne({ slug: slug });
+  }
+  async addCommentToFilm(filmId: String, name: String, comment: String) {
+    return await this.filmModel.findOneAndUpdate(
+      { _id: filmId },
+      { $push: { comments: { name: name, comment: comment } } },
+    );
   }
 }

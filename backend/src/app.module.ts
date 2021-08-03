@@ -10,10 +10,11 @@ import { UserModule } from './user/user.module';
 import { UserService } from './services/user/user.service';
 import { UserModel } from './models/user.model';
 import { JwtModule } from '@nestjs/jwt';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
   imports: [
-    UserModel,
+    { ...UserModel, global: true },
     FilmModel,
     ConfigModule.forRoot({ isGlobal: true }),
     {
@@ -28,6 +29,7 @@ import { JwtModule } from '@nestjs/jwt';
     ),
     FilmModule,
     UserModule,
+    CommentModule,
   ],
   controllers: [AppController],
   providers: [AppService, FilmService, UserService],
